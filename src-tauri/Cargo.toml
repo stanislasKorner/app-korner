@@ -1,0 +1,25 @@
+[package]
+name = "korner-desktop"
+version = "0.1.0"
+description = "Korner Hub Desktop"
+authors = ["you"]
+edition = "2021"
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = [] }
+tauri-plugin-notification = "2"
+tauri-plugin-deep-link = "2"
+
+# JSON / serde
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+
+# Poll Xano depuis Rust
+reqwest = { version = "0.12", features = ["json", "rustls-tls"] }
+tokio = { version = "1", features = ["rt-multi-thread", "macros", "time"] }
+
+[target.'cfg(not(any(target_os = "android", target_os = "ios")))'.dependencies]
+tauri-plugin-cli = "2"

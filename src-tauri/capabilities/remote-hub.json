@@ -1,0 +1,13 @@
+{
+  "$schema": "../gen/schemas/remote-schema.json",
+  "identifier": "remote-hub",
+  "description": "Allow hub.hotels-korner.com to use notifications",
+  "windows": ["main"],
+  "remote": {
+    "urls": ["https://hub.hotels-korner.com/*"]
+  },
+  "permissions": [
+    "core:default",
+    "notification:default"
+  ]
+}
